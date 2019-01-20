@@ -38,10 +38,10 @@ else {
 		echo "<li class=\"dropdown-button\"><a href=\"http://localhost:8100/admin\">Admin</a>
 				<ul class=\"dropdown-content\">
 					<li><a href=\"http://localhost:8100/get_orders.php\">Get orders</a></li>
-					<li><a href=\"http://localhost:8100/print_categories.php\">Print categories</a></li>
-					<li><a href=\"http://localhost:8100/create_category.php\">Create category</a></li>
-					<li><a href=\"http://localhost:8100/update_category.php\">Update category</a></li>
-					<li><a href=\"http://localhost:8100/remove_category.php\">Remove category</a></li>
+					<li><a href=\"http://localhost:8100/category_lst.php\">Print categories</a></li>
+					<li><a href=\"http://localhost:8100/category_add.php\">Create category</a></li>
+					<li><a href=\"http://localhost:8100/category_upt.php\">Update category</a></li>
+					<li><a href=\"http://localhost:8100/category_del.php\">Remove category</a></li>
 					<li><a href=\"http://localhost:8100/print_products.php\">Print products</a></li>
 					<li><a href=\"http://localhost:8100/create_product.php\">Create product</a></li>
 					<li><a href=\"http://localhost:8100/update_product.php\">Update product</a></li>

@@ -33,8 +33,8 @@ if ($_POST['submit'] && $_POST['submit'] == "OK" && $login && strlen($login) <= 
         else {
             echo "OK\n";
         }
+        mysqli_close($con);
     }
-    mysqli_close($con);
 } elseif (!$login) {
     echo "Please enter login.<br>";
 } else {

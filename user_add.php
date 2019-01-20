@@ -35,8 +35,8 @@ if ($_POST['submit'] && $_POST['submit'] == "OK" && $login && $passwd && strlen(
         else {
             echo "OK\n";
         }
+        mysqli_close($con);
     }
-    mysqli_close($con);
 } elseif (!$login || !$passwd) {
     echo "Please enter login and passwords.<br>";
 } else {
