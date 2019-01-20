@@ -2,7 +2,7 @@
 include("./header.php");
 require_once("./connect.php");
 session_start();
-echo "<table border='1'>
+echo "<table>
 <tr>
 <th>#</th>
 <th>Title</th>
