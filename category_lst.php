@@ -2,6 +2,8 @@
 include("./header.php");
 require_once("./connect.php");
 echo "
+    <p>All categories</p>
+    <br>
     <table>
     <tr>
     <th>#</th>

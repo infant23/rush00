@@ -2,7 +2,6 @@
 include("./header.php");
 ?>
 
-<hr>
 <form action="user_del.php" method="post" name="user_del">
     <p>Delete user</p>
     <br>

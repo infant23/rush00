@@ -19,22 +19,19 @@ if ($con && $_POST['submit'] && $_POST['submit'] == 'OK'){
             $category = $row['id'];
         }
     }
-    $sql = "SELECT * FROM articles";
+    $sql = "SELECT * FROM articles WHERE title='$title'";
     $result = mysqli_query($con, $sql);
-    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-        if ($row['title'] == $title){
-            echo "Title exists.<br>";
-            return;
-        }
+    $row = mysqli_fetch_row($result);
+    if (!$row){
+        echo "product with this id doesn't exist <br>";
+        return;
     }
     preg_match("/^[0-9]+([.][0-9]([0-9])?)?$/", $price, $matches);
     if ($title && $image && $price && count("$matches"))
     {
-        $sql = "INSERT INTO articles".
-            "(title, image, category, price, description)".
-            " VALUES('$title', '$image', '$category', '$price', '$description')";
+        $sql = "UPDATE articles SET title='$title', image='$image', price='$price', description='$description' WHERE title='$title'";
         if (mysqli_query($con, $sql)) {
-            echo "Product created!<br>";
+            echo "Product updated!<br>";
             header("Location: http://localhost:8100/");
         } else {
             echo "DB error: " . mysqli_error($con) . "<br>";

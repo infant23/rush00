@@ -1,7 +1,7 @@
 <hr>
 <ul class="navbar">
 	<li><a href="http://localhost:8100">Main</a></li>
-	<li class="dropdown-button"><a href="http://localhost:8100/print_products.php">All articles</a>
+	<li class="dropdown-button"><a href="http://localhost:8100/product_lst.php">All articles</a>
 		<ul class="dropdown-content">
 
 <?php
@@ -13,7 +13,7 @@ if (!$con) {
 	$sql = "SELECT title FROM categories";
 	$retval = mysqli_query($con, $sql);
 	while ($ret = mysqli_fetch_array($retval)) {
-		echo "<li><a href=\"http://localhost:8100/print_c_products.php?category=" . $ret['title'] . "\">" . $ret['title'] . "</a></li>";
+		echo "<li><a href=\"http://localhost:8100/print_c_product.php?category=" . $ret['title'] . "\">" . $ret['title'] . "</a></li>";
 	}
 }
 ?>
@@ -40,10 +40,10 @@ if (!$cooke || $cooke == "") {
 					<li><a href=\"http://localhost:8100/category_add.php\">Create category</a></li>
 					<li><a href=\"http://localhost:8100/category_upt.php\">Update category</a></li>
 					<li><a href=\"http://localhost:8100/category_del.php\">Remove category</a></li>
-					<li><a href=\"http://localhost:8100/print_products.php\">Print products</a></li>
-					<li><a href=\"http://localhost:8100/create_product.php\">Create product</a></li>
-					<li><a href=\"http://localhost:8100/update_product.php\">Update product</a></li>
-					<li><a href=\"http://localhost:8100/remove_product.php\">Remove product</a></li>
+					<li><a href=\"http://localhost:8100/product_lst.php\">Print products</a></li>
+					<li><a href=\"http://localhost:8100/product_create.php\">Create product</a></li>
+					<li><a href=\"http://localhost:8100/product_edit.php\">Update product</a></li>
+					<li><a href=\"http://localhost:8100/product_del.php\">Remove product</a></li>
 					<li><a href=\"http://localhost:8100/user_lst.php\">Print users</a></li>
 					<li><a href=\"http://localhost:8100/user_add.php\">Create user</a></li>
 					<li><a href=\"http://localhost:8100/user_upt.php\">Update user</a></li>

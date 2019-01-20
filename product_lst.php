@@ -2,9 +2,8 @@
 include("./header.php");
 require_once("./connect.php");
 session_start();
-$category = $_GET['category'];
 echo "
-    <p>Products in $category category</p>
+    <p>All products</p>
     <br>
     <table>
     <tr>
@@ -15,8 +14,12 @@ echo "
     <th>Description</th>
     </tr>";
 $con = connect();
-if ($con) {
-    $sql = "SELECT * FROM articles INNER JOIN categories ON articles.category=categories.id WHERE categories.title='$category'";
+if (!$con) {
+    echo "ERROR 1\n";
+    return;
+}
+else {
+    $sql = "SELECT id,title, image, price, description FROM articles";
     $retval = mysqli_query($con,$sql);
     $i = 0;
     while ($ret = mysqli_fetch_array($retval)) {

@@ -10,5 +10,5 @@ function remove_from_basket($product_id){
         var_dump($basket);
         $_SESSION['basket'] = $basket;
     }
-    header("Location: http://localhost:8800/basket.php");
+    header("Location: http://localhost:8100/basket.php");
 }

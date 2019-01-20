@@ -7,6 +7,8 @@ if (!is_admin()) {
 }
 require_once("./connect.php");
 echo "
+    <p>All users</p>
+    <br>
     <table>
     <tr>
     <th>#</th>

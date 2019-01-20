@@ -1,3 +1,3 @@
 <?php
-include("print_products.php");
+include("product_lst.php");
 ?>

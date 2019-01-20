@@ -1,5 +1,6 @@
 <?php
-include('connect.php');
+include("./header.php");
+require_once("./connect.php");
 $con = connect();
 session_start();
 if ($con && $_POST['buy'] && $_POST['buy'] == 'Buy'){
@@ -14,6 +15,7 @@ if ($con && $_POST['buy'] && $_POST['buy'] == 'Buy'){
     $row = mysqli_fetch_row($result);
     if (!$row) {
         echo "User doesn't exist!";
+        header("Location: http://localhost:8100/login.php");
         return;
     }
     preg_match("/^[0-9]+([.][0-9]([0-9])?)?$/", $total_price, $matches);
@@ -42,4 +44,5 @@ if ($con && $_POST['buy'] && $_POST['buy'] == 'Buy'){
     }
     mysqli_close($con);
 }
+include("./footer.php");
 ?>
