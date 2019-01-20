@@ -1,0 +1,54 @@
+ul {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #EEE;
+    top: 0;
+}
+
+ul.navbar {
+    position: relative;
+    width: 100%;
+}
+
+li {
+    float: left;
+    width: 150px;
+}
+
+li a {
+    display: block;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.dropdown-button>a::before {
+    content: "\25BA\0020";
+    font-size: smaller;
+}
+
+.dropdown-button:hover>a::before {
+    content: "\25BC\0020";
+    font-size: smaller;
+}
+
+.dropdown-content {
+    display: none;
+    width: 150px;
+    position: fixed;
+    top: 54px;
+    z-index: 1;
+}
+
+.dropdown-button:hover .dropdown-content{
+    display: block;
+}

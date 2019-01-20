@@ -1,0 +1,16 @@
+body {
+    padding: 0 10%;
+}
+
+table {
+	width: 100%;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+.copy {
+	text-align: right;
+	font-family: monospace;
+	font-style: italic;
+}
