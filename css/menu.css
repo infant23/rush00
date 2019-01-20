@@ -4,7 +4,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #EEE;
+    background-color: #333;
     top: 0;
 }
 
@@ -20,14 +20,17 @@ li {
 
 li a {
     display: block;
-    color: #000;
+    color: white;
     text-align: center;
+    width: 120px;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 li a:hover {
-    background-color: #555;
+    /*background-color: #555;*/
+    background-color: red;
+    display: inline-block;
     color: white;
 }
 
@@ -43,12 +46,17 @@ li a:hover {
 
 .dropdown-content {
     display: none;
-    width: 150px;
     position: fixed;
-    top: 54px;
+    width: 150px;
+    top: 64px;
     z-index: 1;
 }
 
 .dropdown-button:hover .dropdown-content{
     display: block;
+    background-color: #a3858e;
+}
+
+.dropdown-button:hover .dropdown-content a:hover {
+     background-color: #ad4f6c;
 }

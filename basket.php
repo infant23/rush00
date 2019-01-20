@@ -1,37 +1,13 @@
 <?php
-include("header.php");
-require_once ("connect.php");
-include("add_to_basket.php");
-include ("remove_from_basket.php");
+include "header.php";
+require_once "connect.php";
+include "add_to_basket.php";
+include "remove_from_basket.php";
 echo "
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-input[type=submit] {
-    padding:5px 15px; 
-    background:#ccc; 
-    border:0 none;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px; 
-}
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: center;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-</style>
+<link rel=\"stylesheet\" href=\"css/basket.css\">
 </head>
 <body>
 <h1 align=\"center\">Basket</h1>
@@ -44,31 +20,31 @@ tr:nth-child(even) {
   </tr>
 ";
 $con = connect();
-$basket =  $_SESSION['basket'];
+$basket = $_SESSION['basket'];
 $price = 0.0;
-if ($con && $basket){
-    foreach ($basket as $k => $v) {
-        $sql = "SELECT * FROM articles WHERE id ='$k'";
-        $result = mysqli_query($con, $sql);
-        if ($result){
-            $row = mysqli_fetch_row($result);
-            if ($row) {
-                echo "<tr>
+if ($con && $basket) {
+	foreach ($basket as $k => $v) {
+		$sql = "SELECT * FROM articles WHERE id ='$k'";
+		$result = mysqli_query($con, $sql);
+		if ($result) {
+			$row = mysqli_fetch_row($result);
+			if ($row) {
+				echo "<tr>
             <td>$row[1]</td>
              <td>$row[3]</td>
              <td>$v</td>
              <td><form action='remove_from_basket.php' method='get' > <input type='hidden' name='id' value='$k'><input type='submit' name='remove' value='Remove' ></form></td>
-            </tr>     
+            </tr>
         ";
-                $price += $row[3] * $v;
-            }
-        }
+				$price += $row[3] * $v;
+			}
+		}
 
-    }
+	}
 }
 
 echo "</table><h2 align=\"right\">Total Price: $price</h2>
-<form style='float: right' action='add_order.php' method='post'><input type='hidden' name = 'price' value='$price'><input align='right' 
+<form style='float: right' action='add_order.php' method='post'><input type='hidden' name = 'price' value='$price'><input align='right'
 type='submit' id = 'buy' name='buy' value='Buy' ></form>";
-include("bottom.php");
+include "bottom.php";
 ?>
