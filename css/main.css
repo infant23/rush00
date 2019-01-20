@@ -1,13 +1,18 @@
 body {
     padding: 0 10%;
+    background-color: #fff3f2;
 }
 
 table {
 	width: 100%;
+	    font-family: arial, sans-serif;
+    border-collapse: collapse;
 }
 
 table, th, td {
-	border: 1px solid black;
+	border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
 }
 .copy {
 	text-align: right;
