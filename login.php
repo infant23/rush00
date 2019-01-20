@@ -3,7 +3,7 @@ include("./header.php");
 ?>
     <hr>
     <p>Singin</p>
-    <form action="login.php" method="get" name="Singin">
+    <form action="login.php" method="get" name="login">
         <br>
         Username: <input type="text" name="login" value="" maxlength="30">
         <br>
@@ -23,8 +23,7 @@ if ($_GET['submit'] && $_GET['submit'] == "OK" && $login && $passwd && auth($log
 {
     $con = connect();
     $_SESSION['loggued_on_user'] = $login;
-    if ($con)
-    {
+    if ($con) {
         $sql = "SELECT id,login,password FROM users WHERE login='$login'";
         $retval = mysqli_query($con,$sql);
         if ($retval){
@@ -35,9 +34,9 @@ if ($_GET['submit'] && $_GET['submit'] == "OK" && $login && $passwd && auth($log
     }
     header("Location: http://localhost:8100");
 } elseif (!$login || !$passwd) {
-    echo "Please enter login and password.\n";
+    echo "Please enter login and password.<br>";
 } else {
-    echo "ERROR 1\n";
+    echo "Wrong form.<br>";
     $_SESSION['loggued_on_user'] = "";
     $_SESSION['user_id'] = "";
 }

@@ -1,5 +1,5 @@
 <?php
-require_once('connect.php');
+require_once('./connect.php');
 function auth($login, $passwd) {
     if (!$login || !$passwd) {
         return false;
